@@ -97,18 +97,18 @@ solar-challenge-week0/
 
 1️⃣ **Create a new branch for each task**
 ```bash
-git checkout -b your-branch-name
+git checkout -b setup-task'( this is mine you can create your own branch to commit)
 ```
 
 2️⃣ **Stage and commit changes**
 ```bash
 git add .
-git commit -m "feat: describe your change here"
+git commit -m "feat: describe your change here example="Requirment updated '(added panda)" "
 ```
 
 3️⃣ **Push the branch**
 ```bash
-git push origin your-branch-name
+git push origin setup-task '(your-branch-name)
 ```
 
 4️⃣ **Open a Pull Request**  
