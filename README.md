@@ -172,3 +172,4 @@ __pycache__/
 **Kaleb Menbere**  
 📧 [GitHub Profile](https://github.com/kaleb-menbere)  
 🌍 10Academy — Solar Challenge Week 0
+## Task 1: Completed
