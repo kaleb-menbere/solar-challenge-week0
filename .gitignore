@@ -1,8 +1,3 @@
-venv/                 # ignores your virtual environment folder
-data/                 # ignores the data folder
-*.csv                 # ignores all CSV files anywhere in the repo
-.ipynb_checkpoints/   # ignores Jupyter notebook checkpoints
-
 # Ignore virtual environment
 venv/
 
