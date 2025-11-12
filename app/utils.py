@@ -2,11 +2,17 @@ import pandas as pd
 import streamlit as st
 
 @st.cache_data
-def load_data(file_path):
+def load_data(uploaded_file):
     """
-    Load CSV data and fix Timestamp for Streamlit/PyArrow compatibility
+    Load CSV data from uploaded file and fix Timestamp for Streamlit/PyArrow compatibility
     """
-    df = pd.read_csv(file_path, parse_dates=["Timestamp"])
+    if hasattr(uploaded_file, 'read'):
+        # It's an uploaded file object
+        df = pd.read_csv(uploaded_file, parse_dates=["Timestamp"])
+    else:
+        # It's a file path (for backward compatibility)
+        df = pd.read_csv(uploaded_file, parse_dates=["Timestamp"])
+    
     if "Timestamp" in df.columns:
         df["Timestamp"] = pd.to_datetime(df["Timestamp"], errors="coerce").dt.floor("s")
     return df
