@@ -1,175 +1,271 @@
-# 🌞 Solar Challenge Week 0
+# 🌞 10Academy Solar Challenge — Week 0
+
+**Kickstart Your AI Mastery with Cross-Country Solar Farm Analysis**
+📅 *November 05 – 12, 2025*
+
+---
 
 ## 🧩 Overview
-This repository is part of the **10Academy Solar Challenge** — Week 0 focuses on **Git, environment setup, and basic CI/CD**.  
-The goal is to establish a clean, reproducible development environment and workflow that ensures collaboration and consistency across systems.
+
+This repository is part of the **10Academy Artificial Intelligence Mastery Program — Week 0 Challenge**.
+The challenge focuses on foundational skills in **Git, environment setup, data cleaning, exploratory data analysis (EDA)**, and **collaboration workflows** using real-world **solar farm datasets** from **Benin**, **Sierra Leone**, and **Togo**.
+
+You will find my complete work for all Week 0 tasks organized in this repository, with detailed notebooks, visuals, and documentation.
 
 ---
 
 ## 🧱 Prerequisites
 
-Before starting, make sure you have the following installed on your computer:
+Before running the notebooks, ensure you have the following tools installed:
 
-| Tool | Version | Purpose | Check Command |
-|------|----------|----------|----------------|
-| **Python** | 3.8 or higher | Runs the code and creates a virtual environment | `python --version` or `python3 --version` |
-| **pip** | Latest | Installs required Python packages | `pip --version` |
-| **Git** | Latest | For cloning and version control | `git --version` |
-| *(Optional)* **Conda** | Latest | Alternative to venv (optional) | `conda --version` |
+| Tool                 | Version | Purpose              | Check Command       |
+| -------------------- | ------- | -------------------- | ------------------- |
+| **Python**           | 3.10    | Core language        | `python --version`  |
+| **pip**              | Latest  | Install dependencies | `pip --version`     |
+| **Git**              | Latest  | Version control      | `git --version`     |
+| **Jupyter Notebook** | Latest  | Run `.ipynb` files   | `jupyter --version` |
 
-💡 **Tip:**  
-- On **Windows**, download Python from [python.org/downloads](https://www.python.org/downloads/) and check “✅ Add Python to PATH” during installation.  
-- On **macOS/Linux**, Python is often preinstalled. If not, install it via:
-  ```bash
-  sudo apt install python3 python3-pip -y   # Ubuntu/Debian
-  brew install python                       # macOS
-  ```
+💡 *Tip:*
+Install Jupyter if missing:
+
+```bash
+pip install notebook
+```
 
 ---
 
 ## ⚙️ Environment Setup
 
-All commands below should be **copied and pasted directly into your CMD (Windows)** or **Terminal (Mac/Linux)**.
-
----
-
 ### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/kaleb-menbere/solar-challenge-week0.git
 cd solar-challenge-week0
 ```
 
----
-
 ### 2️⃣ Create and Activate a Virtual Environment
 
-#### 🪟 On Windows (CMD)
+#### 🪟 Windows
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-#### 🐧 On Linux / macOS (Terminal)
+#### 🐧 Linux / macOS
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
----
-
 ### 3️⃣ Install Dependencies
+
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is updated later, just re-run the same command.
+---
+
+# 🧩 Task 1 — Git & Environment Setup
+
+### 🎯 Objective
+
+Set up a **clean, reproducible environment** that supports collaboration and continuous integration.
+
+### 📘 Steps
+
+1. Initialized repository and created `.gitignore`
+2. Added `requirements.txt` and listed dependencies (pandas, numpy, matplotlib, seaborn)
+3. Configured GitHub Actions workflow for CI testing (`.github/workflows/ci.yml`)
+4. Documented setup and instructions in `README.md`
+5. Verified CI pipeline builds successfully on push
+
+### 🧾 Deliverables
+
+* ✅ Virtual environment successfully configured
+* ✅ CI pipeline passing
+* ✅ Documentation complete
+
+📁 Files:
+
+```
+.github/workflows/ci.yml  
+requirements.txt  
+.gitignore  
+README.md  
+```
+
+✅ **Task 1 Completed Successfully**
 
 ---
 
-### 4️⃣ Verify the Setup
-Confirm your environment is working correctly:
+# 🧩 Task 2 — Data Profiling, Cleaning & EDA
+
+### 🎯 Objective
+
+Explore, clean, and analyze solar datasets for **Benin**, **Togo**, and **Sierra Leone** to prepare them for comparison.
+
+### 📘 Steps
+
+#### 🔹 Data Profiling
+
+* Loaded raw CSV datasets
+* Checked data info, shape, and missing values
+* Identified key variables: GHI, DNI, DHI, WS, WD, Tamb, RH, TModA, TModB
+
+#### 🔹 Data Cleaning
+
+* Handled missing values using **mean / interpolation imputation**
+* Removed duplicates and corrected timestamp formats
+* Detected and treated outliers using **Z-score filtering**
+* Saved cleaned datasets locally (`data_cleaned/`)
+
+#### 🔹 Exploratory Data Analysis (EDA)
+
+* Generated summary statistics and distributions
+* Plotted GHI, DNI, and DHI trends over time
+* Visualized correlations between temperature, humidity, and irradiance
+* Compared module performance (TModA vs TModB) before and after cleaning
+
+#### 📊 Visuals Included
+
+* Correlation heatmap
+* Line plots (GHI/DNI/DHI vs Timestamp)
+* Scatter plots (Tamb vs RH, WS vs WD)
+* Boxplots for irradiance distributions
+
+### 🧾 Deliverables
+
+* `notebooks/benin_eda.ipynb`
+* `notebooks/togo_eda.ipynb`
+* `notebooks/sierra_leone_eda.ipynb`
+* Cleaned CSVs stored locally
+* EDA insights documented
+
+✅ **Task 2 Completed Successfully**
+
+---
+
+# 🧩 Task 3 — Cross-Country Comparison
+
+### 🎯 Objective
+
+Compare solar performance metrics across **Benin**, **Sierra Leone**, and **Togo** to identify the best region for investment.
+
+### 📘 Steps
+
+1. Loaded cleaned datasets for all three countries
+2. Computed mean, median, and standard deviation of GHI, DNI, and DHI
+3. Created combined visualizations for country-level comparison
+4. Ranked countries by solar potential
+5. Performed optional ANOVA tests to validate statistical significance
+
+#### 📊 Visuals Included
+
+* Boxplots comparing GHI/DNI/DHI across countries
+* Bar chart ranking average GHI
+* Combined summary table of metrics
+
+### 🧾 Deliverables
+
+* `notebooks/compare_countries.ipynb`
+* Statistical comparison table
+* Cross-country comparison visualizations
+
+✅ **Task 3 Completed Successfully**
+
+---
+
+# 🌟 Bonus Task — Interactive Dashboard *(Optional)*
+
+### 🎯 Objective
+
+Develop an interactive **Streamlit dashboard** to visualize solar data insights dynamically.
+
+### 📘 Features
+
+* Country selector dropdown
+* Visual comparisons for GHI, DNI, DHI
+* Summary metrics and trends
+* Interactive charts for temperature and irradiance
+
+#### 🧱 How to Run
+
 ```bash
-python --version
-pip list
+streamlit run app/main.py
 ```
 
-Expected core packages:
-- pandas  
-- numpy  
-- matplotlib  
+### 🧾 Deliverables
 
----
+* `app/main.py`
+* `dashboard_screenshots/`
+* Optional Streamlit deployment link
 
-### 5️⃣ Run CI Check (Optional)
-GitHub Actions automatically verifies environment setup on every push or pull request.
-
-You can test this locally by running:
-```bash
-python --version
-pip install -r requirements.txt
-```
-
----
-
-## 🧠 Project Structure
-```
-solar-challenge-week0/
-├── .vscode/
-│   └── settings.json
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
-│   ├── __init__.py
-├── notebooks/
-│   ├── __init__.py
-│   └── README.md
-├── tests/
-│   ├── __init__.py
-├── scripts/
-│   ├── __init__.py
-│   └── README.md
-├── .gitignore
-├── requirements.txt
-├── README.md
-└── venv/ (excluded via .gitignore)
-```
+🟡 **Bonus Task: In Progress / Optional**
 
 ---
 
 ## 🌿 Git Workflow
 
-1️⃣ **Create a new branch for each task**
-```bash
-git checkout -b setup-task   # (you can use your own branch name)
-```
-
-2️⃣ **Stage and commit changes**
-```bash
-git add .
-git commit -m "feat: update requirements (added pandas)"
-```
-
-3️⃣ **Push the branch**
-```bash
-git push origin setup-task   # (replace with your branch name)
-```
-
-4️⃣ **Open a Pull Request**  
-Go to **GitHub → Compare & Pull Request → Merge into `main`**.
-
----
-
-## 🧩 .gitignore
-Files and folders excluded from version control:
-```
-venv/
-data/
-*.csv
-.ipynb_checkpoints/
-__pycache__/
-```
+| Step | Command                                | Description                 |
+| ---- | -------------------------------------- | --------------------------- |
+| 1    | `git checkout -b <branch>`             | Create a new branch         |
+| 2    | `git add .`                            | Stage changes               |
+| 3    | `git commit -m "feat: task completed"` | Commit with message         |
+| 4    | `git push origin <branch>`             | Push to GitHub              |
+| 5    | PR                                     | Open Pull Request to `main` |
 
 ---
 
 ## ✅ Continuous Integration (CI)
-- **Workflow file:** `.github/workflows/ci.yml`
-- Runs automatically on every push or pull request.
-- Installs dependencies and verifies the environment builds correctly.
+
+Every push triggers GitHub Actions to:
+
+* Install dependencies
+* Verify environment setup
+* Ensure reproducibility
+
+Workflow File: `.github/workflows/ci.yml`
 
 ---
 
-## 📘 How to Contribute
-1. Fork the repository  
-2. Create a new branch for your feature or fix  
-3. Commit your changes with a clear message  
-4. Push and open a Pull Request  
+## 🧠 Project Structure
+
+```
+solar-challenge-week0/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── data/
+│   ├── raw/
+│   ├── cleaned/
+├── notebooks/
+│   ├── benin_eda.ipynb
+│   ├── togo_eda.ipynb
+│   ├── sierra_leone_eda.ipynb
+│   └── compare_countries.ipynb
+├── app/
+│   └── main.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 ---
 
 ## 🧑‍💻 Author
-**Kaleb Menbere**  
-📧 [GitHub Profile](https://github.com/kaleb-menbere)  
-🌍 10Academy — Solar Challenge Week 0
-## Task 1: Completed
+
+**Kaleb Menbere**
+🎓 Python & Web Developer
+🌍 10Academy — Artificial Intelligence Mastery Program
+📧 [GitHub Profile](https://github.com/kaleb-menbere)
+
+---
+
+✨ *All Week 0 Tasks Completed Successfully*
+
+> “Clean data. Smart analysis. Clear insights.” 🚀
+
+---
