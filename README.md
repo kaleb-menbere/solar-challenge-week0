@@ -239,8 +239,6 @@ solar-challenge-week0/
 │   └── workflows/
 │       └── ci.yml
 ├── data/
-│   ├── raw/
-│   ├── cleaned/
 ├── notebooks/
 │   ├── benin_eda.ipynb
 │   ├── togo_eda.ipynb
